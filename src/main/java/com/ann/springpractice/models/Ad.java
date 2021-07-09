@@ -1,11 +1,10 @@
 package com.ann.springpractice.models;
 
-import jdk.jfr.Category;
-import org.apache.catalina.User;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 
 import javax.persistence.*;
 import java.awt.*;
+import java.util.List;
 
 @Entity
 @Table(name = "ads")
@@ -35,9 +34,63 @@ public class Ad {
     )
     private List<Category> categories;
 
-
-
     public Ad() {
     }
 
+    public Ad(Long id, String title, String description, User owner, List<Image> images, List<Category> categories) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.owner = owner;
+        this.images = images;
+        this.categories = categories;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
 }
